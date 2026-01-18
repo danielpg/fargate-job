@@ -1,0 +1,30 @@
+{
+  "family": "fargate-job-alpha",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::701491313159:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::701491313159:role/fargateJobTaskRole",
+  "ephemeralStorage": {  "sizeInGiB": 21 } ,
+
+  "containerDefinitions": [
+    {
+        "name": "job",
+        "image": "701491313159.dkr.ecr.us-east-1.amazonaws.com/fargate-job:latest",
+        "essential": true,
+        "environment": [
+            { "name": "NODE_ENV", "value": "production" },
+            { "name": "JOB_TYPE", "value": "daily-import" }
+        ],      
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/ecs/fargate-job-alpha",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "ecs"
+            }
+        }
+    }
+  ]
+}

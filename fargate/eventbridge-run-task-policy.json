@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ecs:RunTask",
+      "Resource": "arn:aws:ecs:us-east-1:701491313159:task-definition/fargate-job-alpha:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": [
+        "arn:aws:iam::701491313159:role/ecsTaskExecutionRole",
+        "arn:aws:iam::701491313159:role/fargateJobTaskRole"
+      ]
+    }
+  ]
+}

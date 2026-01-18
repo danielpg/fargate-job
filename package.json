@@ -1,7 +1,15 @@
 {
   "name": "fargate-job",
   "version": "1.0.0",
-  "description": "",
+  "description": "``` aws ecr create-repository  --repository-name fargate-job --region us-east-1 ```",
+  "homepage": "https://github.com/danielpg/fargate-job#readme",
+  "bugs": {
+    "url": "https://github.com/danielpg/fargate-job/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielpg/fargate-job.git"
+  },
   "license": "ISC",
   "author": "",
   "type": "commonjs",

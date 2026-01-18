@@ -1,0 +1,16 @@
+{
+  "Id": "RunFargateJob",
+  "Arn": "arn:aws:ecs:us-east-1:701491313159:cluster/fargate-oneoff-cluster",
+  "RoleArn": "arn:aws:iam::701491313159:role/eventRunTaskRole",
+  "EcsParameters": {
+    "TaskDefinitionArn": "arn:aws:ecs:us-east-1:701491313159:task-definition/fargate-job-alpha",
+    "LaunchType": "FARGATE",
+    "NetworkConfiguration": {
+      "awsvpcConfiguration": {
+        "Subnets": ["sub1"],
+        "SecurityGroups": ["sg-019cc9f80cf000e17"],
+        "AssignPublicIp": "ENABLED"
+      }
+    }
+  }
+}
